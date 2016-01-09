@@ -26,7 +26,8 @@ class APIDataFetcher {
     ]
     
     func findRoutes(byStopName stopName: String) {
-        makeAPIRequest(withQuery: "findStopsByRouteId/", andParams: ["stopName" : "%" + stopName + "%"])
+        makeAPIRequest(withQuery: "findRoutesByStopName/", andParams: ["stopName" : "%" + stopName + "%" ])
+        print(stopName)
     }
     
     func findStops(byRouteId routeId : Int) {

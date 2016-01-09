@@ -32,7 +32,8 @@ class RouteListTVC: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        print(searchBar.text!)
+        let apiFetcher = APIDataFetcher()
+        apiFetcher.findRoutes(byStopName: searchBar.text!)
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.endEditing(true)
         
