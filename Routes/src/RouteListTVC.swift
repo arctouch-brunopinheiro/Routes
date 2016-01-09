@@ -20,4 +20,22 @@ class RouteListTVC: UITableViewController, UISearchBarDelegate {
         return 0
     }
     
+    // MARK: - search bar delegate
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        print(searchBar.text!)
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.endEditing(true)
+        
+    }
+    
 }
