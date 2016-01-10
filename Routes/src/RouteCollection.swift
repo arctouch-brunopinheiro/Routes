@@ -10,12 +10,13 @@ import Foundation
 
 class RouteCollection {
     
-    var stopName : String
+    var stopName : String = ""
     
-    var routes : [Route]
+    var routes : [Route] = [Route]()
     
-    init(withStopName stop: String) {
-        self.stopName = stop;
-        self.routes = [Route]()
+    let apiFetcher : APIDataFetcher = APIDataFetcher()
+    
+    func findRoutes(withStopName stopName : String) {
+        apiFetcher.findRoutes(byStopName: stopName)
     }
 }

@@ -11,13 +11,15 @@ import UIKit
 class RouteListTVC: UITableViewController, UISearchBarDelegate {
     
     // MARK: - Table view data source
+    
+    let routeCollection : RouteCollection = RouteCollection()
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.routeCollection.routes.count
     }
     
     // MARK: - search bar delegate
@@ -32,8 +34,7 @@ class RouteListTVC: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        let apiFetcher = APIDataFetcher()
-        apiFetcher.findRoutes(byStopName: searchBar.text!)
+        self.routeCollection.findRoutes(withStopName: searchBar.text!)
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.endEditing(true)
         
