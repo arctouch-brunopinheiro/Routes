@@ -9,17 +9,17 @@
 import Foundation
 
 class Route {
-    var shortName : String
-    var id : Int
-    var agencyId : Int
+    var shortName : String?
+    var id : Int?
+    var agencyId : Int?
     var longName : String
-    var lastModifiedDate : NSDate
+    var lastModifiedDate : NSDate?
     
-    init (shortName: String, id : Int, agencyId : Int, longName : String, lastModifiedDate: NSDate) {
-        self.shortName = shortName
-        self.id = id
-        self.agencyId = agencyId
+    init (/*shortName: String, id : Int, agencyId : Int,*/ longName : String/*, lastModifiedDate: NSDate*/) {
+//        self.shortName = shortName
+//        self.id = id
+//        self.agencyId = agencyId
         self.longName = longName
-        self.lastModifiedDate = lastModifiedDate
+//        self.lastModifiedDate = lastModifiedDate
     }
 }

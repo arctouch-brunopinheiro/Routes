@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 class APIDataFetcher {
     
@@ -25,33 +24,25 @@ class APIDataFetcher {
         "X-AppGlu-Environment" : "staging"
     ]
     
-    func findRoutes(byStopName stopName: String) {
-        makeAPIRequest(withQuery: "findRoutesByStopName/", andParams: ["stopName" : "%" + stopName + "%" ])
-        print(stopName)
+    func findRoutes(byStopName stopName: String) -> Request {
+        return makeAPIRequest(withQuery: "findRoutesByStopName/", andParams: ["stopName" : "%" + stopName + "%" ])
     }
     
-    func findStops(byRouteId routeId : Int) {
-        makeAPIRequest(withQuery: "findStopsByRouteId/", andParams: ["routeId" : "\(routeId)"])
+    func findStops(byRouteId routeId : Int) -> Request {
+        return makeAPIRequest(withQuery: "findStopsByRouteId/", andParams: ["routeId" : "\(routeId)"])
     }
     
-    func findDepartures(byRouteId routeId : Int) {
-        makeAPIRequest(withQuery: "findDeparturesByRouteId/", andParams: ["routeId" : "\(routeId)"])
+    func findDepartures(byRouteId routeId : Int) -> Request {
+        return makeAPIRequest(withQuery: "findDeparturesByRouteId/", andParams: ["routeId" : "\(routeId)"])
     }
     
-    private func makeAPIRequest(withQuery query : String, andParams params: AnyObject) {
+    private func makeAPIRequest(withQuery query : String, andParams params: AnyObject) -> Request{
         
-        Alamofire.request(.POST, self.apiQueryPrefix + query + self.apiRunSuffix, parameters: ["params": params], encoding: .JSON, headers: self.header)
-            .responseJSON { response in
-                switch response.result {
-                case .Success:
-                    if let value = response.result.value {
-                        let json = JSON(value)
-                        print("JSON: \(json)")
-                    }
-                case .Failure(let error):
-                    print(error.localizedDescription)
-                }
-        }
+        return Alamofire.request(.POST,
+                                 self.apiQueryPrefix + query + self.apiRunSuffix,
+                                 parameters: ["params": params],
+                                 encoding: .JSON,
+                                 headers: self.header)
     }
     
     
