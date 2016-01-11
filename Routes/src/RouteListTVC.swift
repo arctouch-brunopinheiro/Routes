@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class RouteListTVC: UITableViewController, UISearchBarDelegate {
     
@@ -22,6 +23,12 @@ class RouteListTVC: UITableViewController, UISearchBarDelegate {
         return self.routeCollection.routes.count
     }
     
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("RouteCell", forIndexPath: indexPath)
+        cell.textLabel?.text = self.routeCollection.routes[indexPath.row].longName
+        return cell
+    }
+    
     // MARK: - search bar delegate
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
@@ -34,10 +41,21 @@ class RouteListTVC: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        self.routeCollection.findRoutes(withStopName: searchBar.text!)
+        let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        progressHUD.mode = .Indeterminate
+        progressHUD.labelText = "Loading"
+        self.routeCollection.findRoutes(withStopName: searchBar.text!) { error in
+            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+            if error != nil {
+                print(error?.localizedDescription)
+            } else {
+                 self.tableView.reloadData()
+            }
+        }
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.endEditing(true)
-        
     }
+    
+    // Mark:
     
 }

@@ -7,6 +7,7 @@ target 'Routes' do
 pod 'Alamofire', '~> 3.1.4'
 pod 'GoogleMaps', '~> 1.11.1'
 pod 'SwiftyJSON', '~> 2.3.1'
+pod 'MBProgressHUD', '~> 0.9.2'
 end
 
 target 'RoutesTests' do
