@@ -15,10 +15,10 @@ class Route {
     var longName : String
     var lastModifiedDate : NSDate?
     
-    init (/*shortName: String, id : Int, agencyId : Int,*/ longName : String/*, lastModifiedDate: NSDate*/) {
-//        self.shortName = shortName
-//        self.id = id
-//        self.agencyId = agencyId
+    init (shortName: String, id : Int, agencyId : Int, longName : String/*, lastModifiedDate: NSDate*/) {
+        self.shortName = shortName
+        self.id = id
+        self.agencyId = agencyId
         self.longName = longName
 //        self.lastModifiedDate = lastModifiedDate
     }

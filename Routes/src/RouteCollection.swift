@@ -28,8 +28,6 @@ class RouteCollection {
                     completionHandler(nil)
                 }
             case .Failure(let error):
-                // return error to GUI
-                print(error.localizedDescription)
                 completionHandler(error)
             }
         }
@@ -42,9 +40,9 @@ class RouteCollection {
         print("JSON: \(json)")
         
         for (_, subJson) : (String, JSON) in json["rows"] {
-            let route = Route(/*shortName: (dictionaryValue["shortName"]?.string)!,
-                              id: (dictionaryValue["id"]?.int!)!,
-                              agencyId: (dictionaryValue["agencyId"]?.int!)!,*/
+            let route = Route(shortName: (subJson["shortName"].string)!,
+                              id: (subJson["id"].int!),
+                              agencyId: (subJson["agencyId"].int!),
                               longName: subJson["longName"].string!/*,
                               lastModifiedDate: dateFormater.dateFromString((dictionaryValue["lasteModifiedDate"]?.string!)!)!*/)
             self.routes.append(route)

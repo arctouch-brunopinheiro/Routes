@@ -56,6 +56,16 @@ class RouteListTVC: UITableViewController, UISearchBarDelegate {
         searchBar.endEditing(true)
     }
     
-    // Mark:
+    // Mark:  segue
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "RouteDetailSegue" {
+            if let destination = segue.destinationViewController as? RouteDetailViewController {
+                if let routeIndex = tableView.indexPathForSelectedRow?.row {
+                    destination.currentRoute = self.routeCollection.routes[routeIndex]
+                }
+            }
+        }
+    }
     
 }
