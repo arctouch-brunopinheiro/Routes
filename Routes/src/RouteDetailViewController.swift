@@ -13,6 +13,8 @@ class RouteDetailViewController: UIViewController {
     @IBOutlet weak var routeName: UILabel!
     
     var currentRoute : Route?
+    let departures = DepartureCollection()
+    //let routeStopCollection = RouteStopCollection()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -20,5 +22,11 @@ class RouteDetailViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         routeName.text = currentRoute?.longName
+        departures.findDepartures(withRouteId: currentRoute!.id!) { error in
+            if error != nil{
+                print(error?.localizedDescription)
+            }
+            
+        }
     }
 }

@@ -37,8 +37,6 @@ class RouteCollection {
         let dateFormater = NSDateFormatter()
         dateFormater.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'+''Z'"
         
-        print("JSON: \(json)")
-        
         for (_, subJson) : (String, JSON) in json["rows"] {
             let route = Route(shortName: (subJson["shortName"].string)!,
                               id: (subJson["id"].int!),
