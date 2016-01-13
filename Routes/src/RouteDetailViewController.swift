@@ -14,7 +14,7 @@ class RouteDetailViewController: UIViewController {
     
     var currentRoute : Route?
     let departures = DepartureCollection()
-    //let routeStopCollection = RouteStopCollection()
+    let routeStopCollection = RouteStopCollection()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -27,6 +27,11 @@ class RouteDetailViewController: UIViewController {
                 print(error?.localizedDescription)
             }
             
+        }
+        routeStopCollection.findStops(withRouteId: currentRoute!.id!) { error in
+            if error != nil {
+                print(error?.localizedDescription)
+            }
         }
     }
 }
