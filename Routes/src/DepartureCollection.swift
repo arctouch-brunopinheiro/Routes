@@ -11,7 +11,9 @@ import SwiftyJSON
 
 class DepartureCollection {
     
-    var departures = [NSDate]()
+    var weekdayDepartures = [NSDate]()
+    var saturdayDepartures = [NSDate]()
+    var sundayDepartures = [NSDate]()
     
     let apiFetcher : APIDataFetcher = APIDataFetcher()
     
@@ -21,7 +23,9 @@ class DepartureCollection {
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                    self.departures.removeAll()
+                    self.weekdayDepartures.removeAll()
+                    self.saturdayDepartures.removeAll()
+                    self.sundayDepartures.removeAll()
                     self.unwrapDepartures(fromJsonObject: json)
                     completionHandler(nil)
                 }
@@ -34,14 +38,17 @@ class DepartureCollection {
     private func unwrapDepartures(fromJsonObject json : JSON) {
         let dateFormater = NSDateFormatter()
         dateFormater.dateFormat = "HH':'mm"
-        
-        //print("JSON: \(json)")
-        
         for (_, subJson) : (String, JSON) in json["rows"] {
             let date = dateFormater.dateFromString(subJson["time"].string!)!
-            self.departures.append(date)
-            print(dateFormater.stringFromDate(date) + " " + subJson["calendar"].string!)
+            switch subJson["calendar"].string! {
+            case "WEEKDAY":
+                weekdayDepartures.append(date)
+            case "SATURDAY":
+                saturdayDepartures.append(date)
+            case "SUNDAY":
+                sundayDepartures.append(date)
+            default: break
+            }
         }
-        //print(departures.count)
     }
 }
