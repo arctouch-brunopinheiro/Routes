@@ -16,7 +16,7 @@
 		B2D4C6F11C2850540029F2F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2D4C6F01C2850540029F2F1 /* Assets.xcassets */; };
 		B2D4C6F41C2850540029F2F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2D4C6F21C2850540029F2F1 /* LaunchScreen.storyboard */; };
 		B2D4C6FF1C2850540029F2F1 /* RoutesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4C6FE1C2850540029F2F1 /* RoutesTests.swift */; };
-		B2FFAE411C44931C00A3AFCB /* RouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFAE401C44931C00A3AFCB /* RouteDetailViewController.swift */; };
+		B2FFAE411C44931C00A3AFCB /* RouteDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFAE401C44931C00A3AFCB /* RouteDetailTVC.swift */; };
 		B2FFAE431C45C89E00A3AFCB /* RouteStopCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFAE421C45C89E00A3AFCB /* RouteStopCollection.swift */; };
 		B2FFAE451C45C8CE00A3AFCB /* DepartureCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFAE441C45C8CE00A3AFCB /* DepartureCollection.swift */; };
 		C5FB63F7223ADFB791BC6DA3 /* Pods_Routes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB41CFC6375B305FEC1DCEA6 /* Pods_Routes.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -48,7 +48,7 @@
 		B2D4C6FA1C2850540029F2F1 /* RoutesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoutesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D4C6FE1C2850540029F2F1 /* RoutesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesTests.swift; sourceTree = "<group>"; };
 		B2D4C7001C2850540029F2F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2FFAE401C44931C00A3AFCB /* RouteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteDetailViewController.swift; path = src/RouteDetailViewController.swift; sourceTree = "<group>"; };
+		B2FFAE401C44931C00A3AFCB /* RouteDetailTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteDetailTVC.swift; path = src/RouteDetailTVC.swift; sourceTree = "<group>"; };
 		B2FFAE421C45C89E00A3AFCB /* RouteStopCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteStopCollection.swift; path = src/RouteStopCollection.swift; sourceTree = "<group>"; };
 		B2FFAE441C45C8CE00A3AFCB /* DepartureCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepartureCollection.swift; path = src/DepartureCollection.swift; sourceTree = "<group>"; };
 		EF4C4136DB9487FF964F938D /* Pods-Routes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Routes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Routes/Pods-Routes.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 				B2D4C6E91C2850540029F2F1 /* AppDelegate.swift */,
 				B28F76451C2B4EED0065B752 /* RouteListTVC.swift */,
 				B2A323B81C40AE23003BEC7C /* APIDataFetcher.swift */,
-				B2FFAE401C44931C00A3AFCB /* RouteDetailViewController.swift */,
+				B2FFAE401C44931C00A3AFCB /* RouteDetailTVC.swift */,
 				B2FFAE421C45C89E00A3AFCB /* RouteStopCollection.swift */,
 				B2FFAE441C45C8CE00A3AFCB /* DepartureCollection.swift */,
 			);
@@ -299,7 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2A323B41C4088F0003BEC7C /* Route.swift in Sources */,
-				B2FFAE411C44931C00A3AFCB /* RouteDetailViewController.swift in Sources */,
+				B2FFAE411C44931C00A3AFCB /* RouteDetailTVC.swift in Sources */,
 				B2A323B91C40AE23003BEC7C /* APIDataFetcher.swift in Sources */,
 				B2D4C6EA1C2850540029F2F1 /* AppDelegate.swift in Sources */,
 				B2FFAE451C45C8CE00A3AFCB /* DepartureCollection.swift in Sources */,

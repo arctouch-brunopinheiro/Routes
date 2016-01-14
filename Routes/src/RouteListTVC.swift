@@ -60,7 +60,7 @@ class RouteListTVC: UITableViewController, UISearchBarDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "RouteDetailSegue" {
-            if let destination = segue.destinationViewController as? RouteDetailViewController {
+            if let destination = segue.destinationViewController as? RouteDetailTVC {
                 if let routeIndex = tableView.indexPathForSelectedRow?.row {
                     destination.currentRoute = self.routeCollection.routes[routeIndex]
                 }
