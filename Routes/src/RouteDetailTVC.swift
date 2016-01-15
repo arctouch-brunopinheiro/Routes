@@ -38,12 +38,25 @@ class RouteDetailTVC: UITableViewController {
         self.updateDepartureLabel()
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section == 1 && indexPath.row == 0 {
+            let height = self.stopListLabel.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
+            return height < self.tableView.estimatedRowHeight ? self.tableView.estimatedRowHeight : height
+        }
+        if indexPath.section == 2 && indexPath.row == 0 {
+            let height = self.departureListLabel.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height +
+                self.dayTypeSegmentController.frame.height + 8
+            return height < 120 ? 120 : height
+        }
+        return 44.0
+    }
+    
     private func loadDepartures() {
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.departureListLabel, animated: true)
         progressHUD.mode = .Indeterminate
         departures.findDepartures(withRouteId: currentRoute!.id!) { error in
             if error != nil{
-                print(error?.localizedDescription)
+                self.showAlertMessageDialog((error?.localizedDescription)!)
             } else {
                 self.updateDepartureLabel()
             }
@@ -82,7 +95,7 @@ class RouteDetailTVC: UITableViewController {
         progressHUD.mode = .Indeterminate
         routeStopCollection.findStops(withRouteId: currentRoute!.id!) { error in
             if error != nil {
-                print(error?.localizedDescription)
+                self.showAlertMessageDialog((error?.localizedDescription)!)
             } else {
                 for stop in self.routeStopCollection.stopNames {
                     if self.stopListLabel.text?.isEmpty == false {
@@ -96,17 +109,11 @@ class RouteDetailTVC: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section == 1 && indexPath.row == 0 {
-            let height = self.stopListLabel.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
-            return height < self.tableView.estimatedRowHeight ? self.tableView.estimatedRowHeight : height
-        }
-        if indexPath.section == 2 && indexPath.row == 0 {
-            let height = self.departureListLabel.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height +
-                self.dayTypeSegmentController.frame.height + 8
-            return height < 120 ? 120 : height
-        }
-        return 44.0
+    private func showAlertMessageDialog(message: String) {
+        let errorDialog = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+        let dismissAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        errorDialog.addAction(dismissAction)
+        self.presentViewController(errorDialog, animated: true, completion: nil)
     }
     
 }
