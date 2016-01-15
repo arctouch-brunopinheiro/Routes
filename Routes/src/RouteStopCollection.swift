@@ -35,7 +35,6 @@ class RouteStopCollection {
         for (_, subJson) : (String, JSON) in json["rows"] {
             let stop = subJson["name"].string!
             self.stopNames.append(stop)
-            print(stop)
         }
     }
 }

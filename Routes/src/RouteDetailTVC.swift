@@ -14,6 +14,7 @@ class RouteDetailTVC: UITableViewController {
     var currentRoute : Route?
     let departures = DepartureCollection()
     let routeStopCollection = RouteStopCollection()
+    var contentOffset : CGFloat = 0
 
     @IBOutlet weak var routeName: UILabel!
     @IBOutlet weak var stopListLabel: UILabel!
@@ -25,6 +26,10 @@ class RouteDetailTVC: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tableView.estimatedRowHeight = 90.0;
+        
         routeName.text = currentRoute?.longName
         self.loadDepartures()
         self.loadStops()
@@ -54,22 +59,23 @@ class RouteDetailTVC: UITableViewController {
         switch self.dayTypeSegmentController.selectedSegmentIndex {
         case 0:
             for departure in self.departures.weekdayDepartures {
-                self.departureListLabel.text? += "  "
                 self.departureListLabel.text? += dateFormater.stringFromDate(departure)
+                self.departureListLabel.text? += "  "
             }
         case 1:
             for departure in self.departures.saturdayDepartures {
-                self.departureListLabel.text? += "  "
                 self.departureListLabel.text? += dateFormater.stringFromDate(departure)
+                self.departureListLabel.text? += "  "
             }
         case 2:
             for departure in self.departures.sundayDepartures {
-                self.departureListLabel.text? += "  "
                 self.departureListLabel.text? += dateFormater.stringFromDate(departure)
+                self.departureListLabel.text? += "  "
             }
         default:
             break;
         }
+        self.tableView.reloadSections(NSIndexSet(index: 2), withRowAnimation: .None)
     }
     
     private func loadStops() {
@@ -85,8 +91,23 @@ class RouteDetailTVC: UITableViewController {
                     }
                     self.stopListLabel.text? += stop
                 }
+                self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: .None)
             }
             MBProgressHUD.hideAllHUDsForView(self.stopListLabel, animated: true)
         }
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section == 1 && indexPath.row == 0 {
+            let height = self.stopListLabel.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
+            return height < self.tableView.estimatedRowHeight ? self.tableView.estimatedRowHeight : height
+        }
+        if indexPath.section == 2 && indexPath.row == 0 {
+            let height = self.departureListLabel.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height +
+                self.dayTypeSegmentController.frame.height + 8
+            return height < 120 ? 120 : height
+        }
+        return 44.0
+    }
+    
 }
