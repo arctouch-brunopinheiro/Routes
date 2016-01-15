@@ -14,7 +14,6 @@ class RouteDetailTVC: UITableViewController {
     var currentRoute : Route?
     let departures = DepartureCollection()
     let routeStopCollection = RouteStopCollection()
-    var contentOffset : CGFloat = 0
 
     @IBOutlet weak var routeName: UILabel!
     @IBOutlet weak var stopListLabel: UILabel!

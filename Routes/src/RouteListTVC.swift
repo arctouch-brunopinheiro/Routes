@@ -47,7 +47,10 @@ class RouteListTVC: UITableViewController, UISearchBarDelegate {
         self.routeCollection.findRoutes(withStopName: searchBar.text!) { error in
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             if error != nil {
-                print(error?.localizedDescription)
+                let errorDialog = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .Alert)
+                let dismissAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                errorDialog.addAction(dismissAction)
+                self.presentViewController(errorDialog, animated: true, completion: nil)
             } else {
                  self.tableView.reloadData()
             }
