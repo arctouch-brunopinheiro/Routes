@@ -77,7 +77,7 @@
         <scene sceneID="RaC-0j-XPG">
             <objects>
                 <tableViewController id="z9V-A6-Koa" customClass="RouteDetailTVC" customModule="Routes" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="4Xd-cW-FH0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="4Xd-cW-FH0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -93,7 +93,7 @@
                         <sections>
                             <tableViewSection id="QJX-N3-84l">
                                 <cells>
-                                    <tableViewCell autoresizesSubviews="NO" contentMode="redraw" selectionStyle="default" indentationWidth="10" rowHeight="60" id="bna-6G-xqZ">
+                                    <tableViewCell autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="redraw" selectionStyle="none" indentationWidth="10" rowHeight="60" id="bna-6G-xqZ">
                                         <rect key="frame" x="0.0" y="99" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bna-6G-xqZ" id="6f0-29-4fN">
@@ -132,7 +132,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Stops" id="yeO-ud-h95">
                                 <cells>
-                                    <tableViewCell autoresizesSubviews="NO" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="stopCell" rowHeight="90" id="T6i-r6-HcI">
+                                    <tableViewCell autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" selectionStyle="none" indentationWidth="10" reuseIdentifier="stopCell" rowHeight="90" id="T6i-r6-HcI">
                                         <rect key="frame" x="0.0" y="210" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T6i-r6-HcI" id="UbP-qt-Yvf">
@@ -161,7 +161,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Departures" id="evo-Cy-bRK">
                                 <cells>
-                                    <tableViewCell autoresizesSubviews="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="departureCell" rowHeight="120" id="1dn-K2-5Ps">
+                                    <tableViewCell autoresizesSubviews="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="departureCell" rowHeight="120" id="1dn-K2-5Ps">
                                         <rect key="frame" x="0.0" y="351" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1dn-K2-5Ps" id="Ht5-1X-ZsJ">

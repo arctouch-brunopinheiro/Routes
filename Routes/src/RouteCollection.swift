@@ -42,9 +42,7 @@ class RouteCollection {
                 agencyId: (subJson["agencyId"].int!),
                 longName: subJson["longName"].string!,
                 lastModifiedDate: dateFormater.dateFromString((subJson["lastModifiedDate"].string!))!)
-            print(route.lastModifiedDate)
             self.routes.append(route)
-            
         }
     }
 }
