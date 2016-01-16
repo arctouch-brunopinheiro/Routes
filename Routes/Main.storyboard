@@ -84,7 +84,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="RWA-jj-Y43">
-                            <rect key="frame" x="0.0" y="473" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="489" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -93,26 +93,36 @@
                         <sections>
                             <tableViewSection id="QJX-N3-84l">
                                 <cells>
-                                    <tableViewCell autoresizesSubviews="NO" contentMode="redraw" selectionStyle="default" indentationWidth="10" id="bna-6G-xqZ">
-                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                    <tableViewCell autoresizesSubviews="NO" contentMode="redraw" selectionStyle="default" indentationWidth="10" rowHeight="60" id="bna-6G-xqZ">
+                                        <rect key="frame" x="0.0" y="99" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bna-6G-xqZ" id="6f0-29-4fN">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Te0-QY-KvK">
-                                                    <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Te0-QY-KvK">
+                                                    <rect key="frame" x="8" y="8" width="584" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfQ-VX-Wb2">
+                                                    <rect key="frame" x="8" y="37" width="584" height="14"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="Te0-QY-KvK" firstAttribute="bottom" secondItem="6f0-29-4fN" secondAttribute="bottomMargin" id="91A-k2-qlp"/>
+                                                <constraint firstItem="xfQ-VX-Wb2" firstAttribute="top" secondItem="Te0-QY-KvK" secondAttribute="bottom" constant="8" id="9q2-GG-U5j"/>
+                                                <constraint firstItem="xfQ-VX-Wb2" firstAttribute="trailing" secondItem="6f0-29-4fN" secondAttribute="trailingMargin" id="F6h-kP-fKL"/>
                                                 <constraint firstItem="Te0-QY-KvK" firstAttribute="leading" secondItem="6f0-29-4fN" secondAttribute="leadingMargin" id="LGK-pu-CHS"/>
+                                                <constraint firstItem="xfQ-VX-Wb2" firstAttribute="bottom" secondItem="6f0-29-4fN" secondAttribute="bottomMargin" id="c3A-bK-0hZ"/>
                                                 <constraint firstItem="Te0-QY-KvK" firstAttribute="top" secondItem="6f0-29-4fN" secondAttribute="topMargin" id="dRG-Jw-xdL"/>
+                                                <constraint firstItem="xfQ-VX-Wb2" firstAttribute="leading" secondItem="6f0-29-4fN" secondAttribute="leadingMargin" id="efC-uk-2s7"/>
                                                 <constraint firstItem="Te0-QY-KvK" firstAttribute="trailing" secondItem="6f0-29-4fN" secondAttribute="trailingMargin" id="w6P-q8-hpl"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -123,7 +133,7 @@
                             <tableViewSection headerTitle="Stops" id="yeO-ud-h95">
                                 <cells>
                                     <tableViewCell autoresizesSubviews="NO" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="stopCell" rowHeight="90" id="T6i-r6-HcI">
-                                        <rect key="frame" x="0.0" y="194" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="210" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T6i-r6-HcI" id="UbP-qt-Yvf">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -152,7 +162,7 @@
                             <tableViewSection headerTitle="Departures" id="evo-Cy-bRK">
                                 <cells>
                                     <tableViewCell autoresizesSubviews="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="departureCell" rowHeight="120" id="1dn-K2-5Ps">
-                                        <rect key="frame" x="0.0" y="335" width="600" height="120"/>
+                                        <rect key="frame" x="0.0" y="351" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1dn-K2-5Ps" id="Ht5-1X-ZsJ">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
@@ -206,6 +216,7 @@
                     <connections>
                         <outlet property="dayTypeSegmentController" destination="pdG-g5-3AL" id="cBz-Am-UFN"/>
                         <outlet property="departureListLabel" destination="N6q-MY-bBu" id="jAp-ro-uOh"/>
+                        <outlet property="modifiedLabel" destination="xfQ-VX-Wb2" id="XH5-1b-6fR"/>
                         <outlet property="routeName" destination="Te0-QY-KvK" id="eRM-S3-Zdq"/>
                         <outlet property="stopListLabel" destination="tDu-uF-h2J" id="9o1-Ju-jUh"/>
                     </connections>

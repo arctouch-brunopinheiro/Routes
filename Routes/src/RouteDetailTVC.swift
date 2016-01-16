@@ -16,6 +16,7 @@ class RouteDetailTVC: UITableViewController {
     let routeStopCollection = RouteStopCollection()
 
     @IBOutlet weak var routeName: UILabel!
+    @IBOutlet weak var modifiedLabel: UILabel!
     @IBOutlet weak var stopListLabel: UILabel!
     @IBOutlet weak var departureListLabel: UILabel!
     @IBOutlet weak var dayTypeSegmentController: UISegmentedControl!
@@ -29,7 +30,10 @@ class RouteDetailTVC: UITableViewController {
         
         self.tableView.estimatedRowHeight = 90.0;
         
+        let dateFormater = NSDateFormatter()
+        dateFormater.dateStyle = .MediumStyle
         routeName.text = currentRoute?.longName
+        modifiedLabel.text = "Last Modified: " + dateFormater.stringFromDate((self.currentRoute?.lastModifiedDate)!)
         self.loadDepartures()
         self.loadStops()
     }
@@ -48,7 +52,7 @@ class RouteDetailTVC: UITableViewController {
                 self.dayTypeSegmentController.frame.height + 8
             return height < 120 ? 120 : height
         }
-        return 44.0
+        return 60.0
     }
     
     private func loadDepartures() {

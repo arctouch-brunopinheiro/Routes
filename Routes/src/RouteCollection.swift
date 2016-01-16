@@ -35,15 +35,16 @@ class RouteCollection {
     
     private func unwrapRoutes(fromJsonObject json : JSON) {
         let dateFormater = NSDateFormatter()
-        dateFormater.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'+''Z'"
-        
+        dateFormater.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'+'zzzz"
         for (_, subJson) : (String, JSON) in json["rows"] {
             let route = Route(shortName: (subJson["shortName"].string)!,
-                              id: (subJson["id"].int!),
-                              agencyId: (subJson["agencyId"].int!),
-                              longName: subJson["longName"].string!/*,
-                              lastModifiedDate: dateFormater.dateFromString((dictionaryValue["lasteModifiedDate"]?.string!)!)!*/)
+                id: (subJson["id"].int!),
+                agencyId: (subJson["agencyId"].int!),
+                longName: subJson["longName"].string!,
+                lastModifiedDate: dateFormater.dateFromString((subJson["lastModifiedDate"].string!))!)
+            print(route.lastModifiedDate)
             self.routes.append(route)
+            
         }
     }
 }
