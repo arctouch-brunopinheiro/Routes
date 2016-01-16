@@ -93,16 +93,32 @@
 		B28F76441C2B4EA60065B752 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				B2CACDC11C4B06DD00A60884 /* Model */,
+				B2CACDC01C4B06CB00A60884 /* Controller */,
+				B2D4C6E91C2850540029F2F1 /* AppDelegate.swift */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		B2CACDC01C4B06CB00A60884 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B28F76451C2B4EED0065B752 /* RouteListTVC.swift */,
+				B2FFAE401C44931C00A3AFCB /* RouteDetailTVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		B2CACDC11C4B06DD00A60884 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				B2A323B21C4088F0003BEC7C /* Route.swift */,
 				B2A323B31C4088F0003BEC7C /* RouteCollection.swift */,
-				B2D4C6E91C2850540029F2F1 /* AppDelegate.swift */,
-				B28F76451C2B4EED0065B752 /* RouteListTVC.swift */,
 				B2A323B81C40AE23003BEC7C /* APIDataFetcher.swift */,
-				B2FFAE401C44931C00A3AFCB /* RouteDetailTVC.swift */,
 				B2FFAE421C45C89E00A3AFCB /* RouteStopCollection.swift */,
 				B2FFAE441C45C8CE00A3AFCB /* DepartureCollection.swift */,
 			);
-			name = src;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		B2D4C6DD1C2850530029F2F1 = {
