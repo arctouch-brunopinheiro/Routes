@@ -28,7 +28,7 @@ class RouteDetailTVC: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.tableView.estimatedRowHeight = 90.0;
+        self.tableView.estimatedRowHeight = 100.0;
         
         let dateFormater = NSDateFormatter()
         dateFormater.dateStyle = .MediumStyle
@@ -50,7 +50,7 @@ class RouteDetailTVC: UITableViewController {
         if indexPath.section == 2 && indexPath.row == 0 {
             let height = self.departureListLabel.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height +
                 self.dayTypeSegmentController.frame.height + 8
-            return height < 120 ? 120 : height
+            return height < 135 ? 135 : height
         }
         return 60.0
     }
