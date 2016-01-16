@@ -34,8 +34,8 @@ class RouteDetailTVC: UITableViewController {
         dateFormater.dateStyle = .MediumStyle
         routeName.text = currentRoute?.longName
         modifiedLabel.text = "Last Modified: " + dateFormater.stringFromDate((self.currentRoute?.lastModifiedDate)!)
-        self.loadDepartures()
         self.loadStops()
+        self.loadDepartures()
     }
     
     @IBAction func indexChanged(sender: UISegmentedControl) {
@@ -63,6 +63,7 @@ class RouteDetailTVC: UITableViewController {
                 self.showAlertMessageDialog((error?.localizedDescription)!)
             } else {
                 self.updateDepartureLabel()
+                self.tableView.reloadSections(NSIndexSet(index: 2), withRowAnimation: .None)
             }
             MBProgressHUD.hideAllHUDsForView(self.departureListLabel, animated: true)
         }
@@ -91,7 +92,7 @@ class RouteDetailTVC: UITableViewController {
         default:
             break;
         }
-        self.tableView.reloadSections(NSIndexSet(index: 2), withRowAnimation: .None)
+        self.tableView.setNeedsDisplay()
     }
     
     private func loadStops() {
