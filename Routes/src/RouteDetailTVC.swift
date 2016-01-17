@@ -33,7 +33,9 @@ class RouteDetailTVC: UITableViewController {
         let dateFormater = NSDateFormatter()
         dateFormater.dateStyle = .MediumStyle
         routeName.text = currentRoute?.longName
-        modifiedLabel.text = "Last Modified: " + dateFormater.stringFromDate((self.currentRoute?.lastModifiedDate)!)
+        if let date = self.currentRoute?.lastModifiedDate {
+            modifiedLabel.text = "Last Modified: " + dateFormater.stringFromDate(date)
+        }
         self.loadStops()
         self.loadDepartures()
     }
@@ -59,8 +61,8 @@ class RouteDetailTVC: UITableViewController {
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.departureListLabel, animated: true)
         progressHUD.mode = .Indeterminate
         departures.findDepartures(withRouteId: currentRoute!.id) { error in
-            if error != nil{
-                self.showAlertMessageDialog((error?.localizedDescription)!)
+            if let error = error {
+                self.showAlertMessageDialog(error.localizedDescription)
             } else {
                 self.updateDepartureLabel()
                 self.tableView.reloadSections(NSIndexSet(index: 2), withRowAnimation: .None)
@@ -99,8 +101,8 @@ class RouteDetailTVC: UITableViewController {
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.stopListLabel, animated: true)
         progressHUD.mode = .Indeterminate
         routeStopCollection.findStops(withRouteId: currentRoute!.id) { error in
-            if error != nil {
-                self.showAlertMessageDialog((error?.localizedDescription)!)
+            if let error = error {
+                self.showAlertMessageDialog(error.localizedDescription)
             } else {
                 for stop in self.routeStopCollection.stopNames {
                     if self.stopListLabel.text?.isEmpty == false {
