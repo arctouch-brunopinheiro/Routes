@@ -33,8 +33,9 @@ class RouteStopCollection {
     
     private func unwrapStops(fromJsonObject json : JSON) {
         for (_, subJson) : (String, JSON) in json["rows"] {
-            let stop = subJson["name"].string!
-            self.stopNames.append(stop)
+            if let stop = subJson["name"].string {
+                self.stopNames.append(stop)
+            }
         }
     }
 }
