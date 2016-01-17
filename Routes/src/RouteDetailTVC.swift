@@ -58,7 +58,7 @@ class RouteDetailTVC: UITableViewController {
     private func loadDepartures() {
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.departureListLabel, animated: true)
         progressHUD.mode = .Indeterminate
-        departures.findDepartures(withRouteId: currentRoute!.id!) { error in
+        departures.findDepartures(withRouteId: currentRoute!.id) { error in
             if error != nil{
                 self.showAlertMessageDialog((error?.localizedDescription)!)
             } else {
@@ -98,7 +98,7 @@ class RouteDetailTVC: UITableViewController {
     private func loadStops() {
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.stopListLabel, animated: true)
         progressHUD.mode = .Indeterminate
-        routeStopCollection.findStops(withRouteId: currentRoute!.id!) { error in
+        routeStopCollection.findStops(withRouteId: currentRoute!.id) { error in
             if error != nil {
                 self.showAlertMessageDialog((error?.localizedDescription)!)
             } else {

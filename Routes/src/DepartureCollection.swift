@@ -39,15 +39,20 @@ class DepartureCollection {
         let dateFormater = NSDateFormatter()
         dateFormater.dateFormat = "HH':'mm"
         for (_, subJson) : (String, JSON) in json["rows"] {
-            let date = dateFormater.dateFromString(subJson["time"].string!)!
-            switch subJson["calendar"].string! {
-            case "WEEKDAY":
-                weekdayDepartures.append(date)
-            case "SATURDAY":
-                saturdayDepartures.append(date)
-            case "SUNDAY":
-                sundayDepartures.append(date)
-            default: break
+            if let dateString = subJson["time"].string,
+                calendarType = subJson["calendar"].string {
+                    if let date = dateFormater.dateFromString(dateString) {
+                        switch calendarType {
+                        case "WEEKDAY":
+                            weekdayDepartures.append(date)
+                        case "SATURDAY":
+                            saturdayDepartures.append(date)
+                        case "SUNDAY":
+                            sundayDepartures.append(date)
+                        default: break
+                        }
+                        
+                    }
             }
         }
     }
