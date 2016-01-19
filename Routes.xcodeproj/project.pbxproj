@@ -15,22 +15,11 @@
 		B2D4C6EA1C2850540029F2F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4C6E91C2850540029F2F1 /* AppDelegate.swift */; };
 		B2D4C6F11C2850540029F2F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2D4C6F01C2850540029F2F1 /* Assets.xcassets */; };
 		B2D4C6F41C2850540029F2F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2D4C6F21C2850540029F2F1 /* LaunchScreen.storyboard */; };
-		B2D4C6FF1C2850540029F2F1 /* RoutesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D4C6FE1C2850540029F2F1 /* RoutesTests.swift */; };
 		B2FFAE411C44931C00A3AFCB /* RouteDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFAE401C44931C00A3AFCB /* RouteDetailTVC.swift */; };
 		B2FFAE431C45C89E00A3AFCB /* RouteStopCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFAE421C45C89E00A3AFCB /* RouteStopCollection.swift */; };
 		B2FFAE451C45C8CE00A3AFCB /* DepartureCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFAE441C45C8CE00A3AFCB /* DepartureCollection.swift */; };
 		C5FB63F7223ADFB791BC6DA3 /* Pods_Routes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB41CFC6375B305FEC1DCEA6 /* Pods_Routes.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B2D4C6FB1C2850540029F2F1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B2D4C6DE1C2850530029F2F1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B2D4C6E51C2850540029F2F1;
-			remoteInfo = Routes;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		42643BCCD96D1C84DFBAA117 /* Pods-Routes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Routes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Routes/Pods-Routes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -45,9 +34,6 @@
 		B2D4C6F01C2850540029F2F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2D4C6F31C2850540029F2F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2D4C6F51C2850540029F2F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2D4C6FA1C2850540029F2F1 /* RoutesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoutesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2D4C6FE1C2850540029F2F1 /* RoutesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesTests.swift; sourceTree = "<group>"; };
-		B2D4C7001C2850540029F2F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2FFAE401C44931C00A3AFCB /* RouteDetailTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteDetailTVC.swift; path = src/RouteDetailTVC.swift; sourceTree = "<group>"; };
 		B2FFAE421C45C89E00A3AFCB /* RouteStopCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteStopCollection.swift; path = src/RouteStopCollection.swift; sourceTree = "<group>"; };
 		B2FFAE441C45C8CE00A3AFCB /* DepartureCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepartureCollection.swift; path = src/DepartureCollection.swift; sourceTree = "<group>"; };
@@ -60,13 +46,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5FB63F7223ADFB791BC6DA3 /* Pods_Routes.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B2D4C6F71C2850540029F2F1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				B2D4C6E81C2850540029F2F1 /* Routes */,
-				B2D4C6FD1C2850540029F2F1 /* RoutesTests */,
 				B2D4C6E71C2850540029F2F1 /* Products */,
 				9B2653C46A82070CB717CEDF /* Pods */,
 				65E307C91291CB59B4707ACC /* Frameworks */,
@@ -136,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				B2D4C6E61C2850540029F2F1 /* Routes.app */,
-				B2D4C6FA1C2850540029F2F1 /* RoutesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,15 +128,6 @@
 				B2A323B61C408978003BEC7C /* Main.storyboard */,
 			);
 			path = Routes;
-			sourceTree = "<group>";
-		};
-		B2D4C6FD1C2850540029F2F1 /* RoutesTests */ = {
-			isa = PBXGroup;
-			children = (
-				B2D4C6FE1C2850540029F2F1 /* RoutesTests.swift */,
-				B2D4C7001C2850540029F2F1 /* Info.plist */,
-			);
-			path = RoutesTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,24 +153,6 @@
 			productReference = B2D4C6E61C2850540029F2F1 /* Routes.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B2D4C6F91C2850540029F2F1 /* RoutesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B2D4C7061C2850540029F2F1 /* Build configuration list for PBXNativeTarget "RoutesTests" */;
-			buildPhases = (
-				B2D4C6F61C2850540029F2F1 /* Sources */,
-				B2D4C6F71C2850540029F2F1 /* Frameworks */,
-				B2D4C6F81C2850540029F2F1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B2D4C6FC1C2850540029F2F1 /* PBXTargetDependency */,
-			);
-			name = RoutesTests;
-			productName = RoutesTests;
-			productReference = B2D4C6FA1C2850540029F2F1 /* RoutesTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -215,10 +165,6 @@
 				TargetAttributes = {
 					B2D4C6E51C2850540029F2F1 = {
 						CreatedOnToolsVersion = 7.1;
-					};
-					B2D4C6F91C2850540029F2F1 = {
-						CreatedOnToolsVersion = 7.1;
-						TestTargetID = B2D4C6E51C2850540029F2F1;
 					};
 				};
 			};
@@ -236,7 +182,6 @@
 			projectRoot = "";
 			targets = (
 				B2D4C6E51C2850540029F2F1 /* Routes */,
-				B2D4C6F91C2850540029F2F1 /* RoutesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,13 +194,6 @@
 				B2A323B71C408978003BEC7C /* Main.storyboard in Resources */,
 				B2D4C6F41C2850540029F2F1 /* LaunchScreen.storyboard in Resources */,
 				B2D4C6F11C2850540029F2F1 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B2D4C6F81C2850540029F2F1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,23 +263,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B2D4C6F61C2850540029F2F1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B2D4C6FF1C2850540029F2F1 /* RoutesTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B2D4C6FC1C2850540029F2F1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B2D4C6E51C2850540029F2F1 /* Routes */;
-			targetProxy = B2D4C6FB1C2850540029F2F1 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B2D4C6F21C2850540029F2F1 /* LaunchScreen.storyboard */ = {
@@ -464,30 +386,6 @@
 			};
 			name = Release;
 		};
-		B2D4C7071C2850540029F2F1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = RoutesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.magnus.RoutesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Routes.app/Routes";
-			};
-			name = Debug;
-		};
-		B2D4C7081C2850540029F2F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = RoutesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.magnus.RoutesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Routes.app/Routes";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -505,15 +403,6 @@
 			buildConfigurations = (
 				B2D4C7041C2850540029F2F1 /* Debug */,
 				B2D4C7051C2850540029F2F1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B2D4C7061C2850540029F2F1 /* Build configuration list for PBXNativeTarget "RoutesTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B2D4C7071C2850540029F2F1 /* Debug */,
-				B2D4C7081C2850540029F2F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
