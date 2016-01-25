@@ -94,6 +94,12 @@ class RouteListTVC: UITableViewController, UISearchBarDelegate {
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         progressHUD.mode = .Indeterminate
         progressHUD.labelText = "Loading"
+
+        /*
+        If you had given findRoutes two separate callbacks for success and failure, you could avoid checking for error before handling the success case.
+        It would improve clarity and simplify the logic
+        */
+
         self.routeCollection.findRoutes(withStopName: searchBar.text!) { error in
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             if let error = error {
@@ -102,7 +108,7 @@ class RouteListTVC: UITableViewController, UISearchBarDelegate {
                 errorDialog.addAction(dismissAction)
                 self.presentViewController(errorDialog, animated: true, completion: nil)
             } else {
-                 self.tableView.reloadData()
+                self.tableView.reloadData()
             }
         }
         searchBar.setShowsCancelButton(false, animated: true)

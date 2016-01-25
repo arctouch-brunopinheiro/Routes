@@ -50,6 +50,9 @@ class RouteStopCollection {
                 if let value = response.result.value {
                     let json = JSON(value)
                     self.stopNames.removeAll()
+                    /* 
+                    SAME HERE
+                    */
                     self.unwrapStops(fromJsonObject: json)
                     completionHandler(nil)
                 }

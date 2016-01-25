@@ -58,6 +58,10 @@ class DepartureCollection {
                     self.weekdayDepartures.removeAll()
                     self.saturdayDepartures.removeAll()
                     self.sundayDepartures.removeAll()
+
+                    /*
+                    SAME HERE
+                    */
                     self.unwrapDepartures(fromJsonObject: json)
                     completionHandler(nil)
                 }

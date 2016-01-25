@@ -159,6 +159,9 @@ class RouteDetailTVC: UITableViewController {
         routeStopCollection.findStops(withRouteId: currentRoute!.id) { error in
             if let error = error {
                 self.showAlertMessageDialog(error.localizedDescription)
+                /*
+                You could return here and reduce the depth by removing the else block
+                */
             } else {
                 for stop in self.routeStopCollection.stopNames {
                     if self.stopListLabel.text?.isEmpty == false {
@@ -168,6 +171,9 @@ class RouteDetailTVC: UITableViewController {
                 }
                 self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: .None)
             }
+            /*
+            If you did like my previous comment, this line should be moved to the top of this block
+            */
             MBProgressHUD.hideAllHUDsForView(self.stopListLabel, animated: true)
         }
     }

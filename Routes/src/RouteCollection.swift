@@ -43,6 +43,7 @@ class RouteCollection {
      - parameter stopName            stop name used to search routes.
      - parameter completionHandler   callback used to handle api response.
      */
+    
     func findRoutes(withStopName stopName : String, completionHandler: (NSError?) -> ()) {
         apiFetcher.findRoutes(byStopName: stopName).responseJSON { response in
             switch response.result {
@@ -50,6 +51,11 @@ class RouteCollection {
                 if let value = response.result.value {
                     let json = JSON(value)
                     self.routes.removeAll()
+                    /*
+                    This method name is a bit unclear regarding its purpose.
+                    By reading this I would expect it to return me the results of its computation, but instead it updates the routes property directly.
+                    I'd give this a different name or give it a return type and assign the result to self.routes
+                    */
                     self.unwrapRoutes(fromJsonObject: json)
                     completionHandler(nil)
                 }
